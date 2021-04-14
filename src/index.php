@@ -17,6 +17,7 @@
         var players;
 
         function startGame() {
+            document.getElementById("controls").style.display = "none";
             document.getElementById("tabledemo").style.display = "none";
             document.getElementById("table").style.display = "initial";
 
@@ -46,16 +47,38 @@
             let i;
             for (i = 1; i <= rounds; i++) {
                 console.log(tbody.innerHTML);
-                tbody.innerHTML = tbody.innerHTML +
-                    "<th scope=\"row\">" + initRoundCycle + "*" + initMulti + "</th>";
+
+                var tr = document.createElement("tr");
+                var th = document.createElement("th");
+                th.setAttribute("scope", "row")
+                th.innerText = initRoundCycle + "*" + initMulti;
+
+                tr.appendChild(th);
+
 
 
                 let j;
                 for (j = 1; j <= players.length; j++) {
-                    tbody.innerHTML = tbody.innerHTML + "<td><input type='text' name='input" + i + j + initRoundCycle + initMulti + "' ></td>";
+                    var td = document.createElement("td");
+                    var input = document.createElement("input");
+
+                    input.setAttribute("type", "text");
+                    input.setAttribute("id", "input" + j + i);
+                    input.setAttribute("name", "input" + j + i);
+
+                    input.addEventListener("focusout", ev => inputEvent(ev));
+
+                    td.appendChild(input);
+                    tr.appendChild(td);
+
                 }
 
+
+
+                console.log(tbody);
+
                 // tbody.innerHTML = tbody.innerHTML + "</tr>"
+                tbody.appendChild(tr);
 
                 if (initRoundCycle === 2) {
                     initRoundCycle = 1;
@@ -65,7 +88,26 @@
                 initRoundCycle++;
             }
 
+            var trtotal = document.createElement("tr");
+            for (k = 0; k <= players.length; k++) {
+                var tdtotal = document.createElement("td");
+                tdtotal.setAttribute("name", players[k] + "total");
+                tdtotal.innerText = "0";
 
+                if (k === 0) {
+                    var tdtotallabel = document.createElement("td");
+                    tdtotallabel.innerText = "Totals";
+                    tdtotallabel.setAttribute("scope", "row");
+                    trtotal.appendChild(tdtotallabel);
+                }
+
+                trtotal.appendChild(tdtotal);
+            }
+            tbody.appendChild(trtotal);
+
+        }
+
+        function inputEvent(ev) {
 
         }
 
