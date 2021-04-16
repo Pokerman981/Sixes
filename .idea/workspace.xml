@@ -34,10 +34,12 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Sixes" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/src">
@@ -53,60 +55,22 @@
       <option name="presentableId" value="Default" />
       <updated>1618085737385</updated>
       <workItem from="1618085738463" duration="17855000" />
+      <workItem from="1618368482320" duration="4117000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="667" y="181" key="#PHP" timestamp="1618085833329">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="667" y="181" key="#PHP/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618085833329" />
-    <state x="414" y="174" width="1092" height="753" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618085883177">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="174" width="1092" height="753" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618085883177" />
-    <state x="740" y="293" key="FileChooserDialogImpl" timestamp="1618085881382">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="293" key="FileChooserDialogImpl/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618085881382" />
-    <state x="838" y="417" key="Github.ShareDialog" timestamp="1618194789435">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="838" y="417" key="Github.ShareDialog/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618194789435" />
-    <state x="792" y="224" key="Github.UntrackedFilesDialog" timestamp="1618194796547">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="792" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618194796547" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1618161064797">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618161064797" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1618161064797">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618161064797" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1618161064797">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618161064797" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1618161064797">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618161064797" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1618085752763">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618085752763" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1618160810185">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618160810185" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1618163943939">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.7.1920.1040@0.0.1920.1040" timestamp="1618163943939" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

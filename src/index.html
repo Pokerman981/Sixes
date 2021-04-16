@@ -46,7 +46,6 @@
 
             let i;
             for (i = 1; i <= rounds; i++) {
-                console.log(tbody.innerHTML);
 
                 var tr = document.createElement("tr");
                 var th = document.createElement("th");
@@ -66,18 +65,13 @@
                     input.setAttribute("id", "input" + j + i);
                     input.setAttribute("name", "input" + j + i);
 
-                    input.addEventListener("focusout", ev => inputEvent(ev));
+                    input.addEventListener("focusout", ev => focusOut(ev));
 
                     td.appendChild(input);
                     tr.appendChild(td);
 
                 }
 
-
-
-                console.log(tbody);
-
-                // tbody.innerHTML = tbody.innerHTML + "</tr>"
                 tbody.appendChild(tr);
 
                 if (initRoundCycle === 2) {
@@ -91,7 +85,7 @@
             var trtotal = document.createElement("tr");
             for (k = 0; k <= players.length; k++) {
                 var tdtotal = document.createElement("td");
-                tdtotal.setAttribute("name", players[k] + "total");
+                tdtotal.setAttribute("name", k + "total");
                 tdtotal.innerText = "0";
 
                 if (k === 0) {
@@ -99,6 +93,7 @@
                     tdtotallabel.innerText = "Totals";
                     tdtotallabel.setAttribute("scope", "row");
                     trtotal.appendChild(tdtotallabel);
+                    continue;
                 }
 
                 trtotal.appendChild(tdtotal);
@@ -107,7 +102,17 @@
 
         }
 
-        function inputEvent(ev) {
+        function focusOut(ev) {
+            let inputTarget = ev.target;
+            let inputTargetNum = parseInt(inputTarget.id.replace("input", ""));
+
+            let round = inputTargetNum % 10;
+            let playerNum = (inputTargetNum - (inputTargetNum % 10)) / 10;
+
+            console.log(playerNum);
+            console.log(round);
+
+
 
         }
 
