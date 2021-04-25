@@ -18,7 +18,6 @@
 
         function startGame() {
             document.getElementById("controls").style.display = "none";
-            document.getElementById("tabledemo").style.display = "none";
             document.getElementById("table").style.display = "initial";
 
             rounds = document.getElementById("rounds").value;
@@ -61,7 +60,7 @@
                     var td = document.createElement("td");
                     var input = document.createElement("input");
 
-                    input.setAttribute("type", "text");
+                    input.setAttribute("type", "number");
                     input.setAttribute("id", "input" + j + i);
                     input.setAttribute("name", "input" + j + i);
 
@@ -85,7 +84,7 @@
             var trtotal = document.createElement("tr");
             for (k = 0; k <= players.length; k++) {
                 var tdtotal = document.createElement("td");
-                tdtotal.setAttribute("name", k + "total");
+                tdtotal.setAttribute("id", k + "total");
                 tdtotal.innerText = "0";
 
                 if (k === 0) {
@@ -106,14 +105,24 @@
             let inputTarget = ev.target;
             let inputTargetNum = parseInt(inputTarget.id.replace("input", ""));
 
-            let round = inputTargetNum % 10;
+            // let round = inputTargetNum % 10;
             let playerNum = (inputTargetNum - (inputTargetNum % 10)) / 10;
 
-            console.log(playerNum);
-            console.log(round);
+            let totalInput = document.getElementById(playerNum + "total");
 
+            let x;
+            let total = 0;
+            for (x = 1; x <= rounds; x++ ) {
+                var input = document.getElementById("input" + playerNum + x);
+                var value = isNaN(parseInt(input.value)) ? 0 : parseInt(input.value);
+                total = total + value;
 
+            }
+            totalInput.innerText = "" + total;
+        }
 
+        window.onbeforeunload = ev => {
+            return confirm("Are you sure you want to refresh?");
         }
 
 
@@ -130,20 +139,21 @@
 
         <main class="container mt-5">
             <div id="controls" class="container-fluid">
-                <div id="options">
+                <div id="options" style="margin-top: 15%">
                     <div class="row justify-content-center">
-                        <div class="col m-2 position-relative col-auto align-self-center w-auto">
-                            <label>Amount of rounds: <input id="rounds" type="text" name="rounds"></label>
+                        <div class="row m-2 position-relative align-self-center">
+                            <label>Amount of rounds: <input class="container-fluid" id="rounds" type="number" name="rounds"></label>
                         </div>
 
-                        <div class="col m-2 position-relative col-auto align-self-center w-auto">
+
+                        <div class="row m-2 position-relative  align-self-center">
+                            <label>Players Names: <input class="container-fluid" id="players" type="text" name="players" placeholder="Use ; to separate"></label>
+                        </div>
+
+                        <div class="row m-2 position-relative  align-self-center">
                             <button type="button" class="btn btn-primary position-relative col m-2" onclick="startGame()">
                                 Start Game
                             </button>
-                        </div>
-
-                        <div class="col m-2 position-relative col-auto align-self-center w-auto">
-                            <label>Players Names: <input id="players" type="text" name="players" placeholder="Use ; to separate"></label>
                         </div>
                     </div>
                 </div>
@@ -161,45 +171,6 @@
                     </tbody>
                 </table>
             </div>
-
-            <div id="tabledemo" class="p-5">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Player 1</th>
-                        <th scope="col">Player 2</th>
-                        <th scope="col">Player 3</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1*3</th>
-                        <td>100</td>
-                        <td>200</td>
-                        <td>150</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2*3</th>
-                        <td>-100</td>
-                        <td>150</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1*4</th>
-                        <td>250</td>
-                        <td>250</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Totals</th>
-                        <th scope="row">250</th>
-                        <th scope="row">600</th>
-                        <th scope="row">750</th>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
         </main>
 
     <footer class="container-fluid fixed-bottom bg-dark p-1" >
@@ -213,7 +184,7 @@
 <!--                    Save Game-->
 <!--                </button>-->
 
-                <button type="button" class="btn btn-danger position-relative col m-2">
+                <button type="button" class="btn btn-danger position-relative col m-2" onclick="location.reload()">
                     Reset Game
                 </button>
             </div>
